@@ -7,10 +7,10 @@ const Home = () => {
     <div>
       <Navbar />
       <main className="container mx-auto p-4">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Gita's Website</h1>
+        <h1 className="text-4xl font-bold mb-4">{`Welcome to Gita's Website`}</h1>
         <p className="text-lg mb-4">
-          This is a demo site to showcase Gita's work. You can find various sections
-          such as blog posts, portfolio, photos, and more.
+          {`This is a demo site to showcase Gita's work. You can find various sections
+          such as blog posts, portfolio, photos, and more.`}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <div className="p-4 bg-gray-100 rounded shadow">
