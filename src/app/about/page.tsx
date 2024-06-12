@@ -1,16 +1,17 @@
-import Navbar from "@/components/Navbar";
+import AboutDetailSection from '@/components/AboutDetailSection';
+import { Footer } from '@/components/Footer';
+import Header from '@/components/Header';
+import { Publication } from '@/components/Publication';
+import React from 'react';
 
-// src/pages/about.tsx
-const About = () => {
-  return (
-    <div>
-      <Navbar></Navbar>
-      <div>
-        <h1 className="text-4xl font-bold mb-4">About</h1>
-        <p>This is the about page.</p>
-      </div>
-    </div>
-  );
-};
+const BlogPage = () => (
+  <div className="App">
+    <Header />
+    <AboutDetailSection />
+    <Publication />
+    <Footer />
+  </div>
+);
 
-export default About;
+export default BlogPage;
+
