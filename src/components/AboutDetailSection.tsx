@@ -27,24 +27,24 @@ const AboutDetailSection: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="lg:grid lg:grid-cols-2 lg:gap-12">
+       <div className="lg:grid lg:grid-cols-2 lg:gap-12">
           <div>
             <div className="mb-12">
               <div className="text-xl font-semibold mb-4" id="education">Education</div>
               <div className="space-y-4">
                 <div>
-                  <span className="font-bold">Data science / Master's degree</span>
+                  <span className="font-bold">Data science / Master&apos;s degree</span>
                   <p className="text-gray-600">Ukrainian Catholic University (UCU)</p>
                   <p className="text-gray-600">2018 - 2020</p>
                 </div>
                 <div>
-                  <span className="font-bold">Software engineer / Bachelor's degree</span>
-                  <p className="text-gray-600">National University "Lviv Polytechnics"</p>
+                  <span className="font-bold">Software engineer / Bachelor&apos;s degree</span>
+                  <p className="text-gray-600">National University &quot;Lviv Polytechnics&quot;</p>
                   <p className="text-gray-600">2015 - 2017</p>
                 </div>
                 <div>
-                  <span className="font-bold">Software engineer / Associate's degree</span>
-                  <p className="text-gray-600">TC NU "Lviv Polytechnics"</p>
+                  <span className="font-bold">Software engineer / Associate&apos;s degree</span>
+                  <p className="text-gray-600">TC NU &quot;Lviv Polytechnics&quot;</p>
                   <p className="text-gray-600">2011 - 2015</p>
                 </div>
               </div>
@@ -120,7 +120,7 @@ const AboutDetailSection: React.FC = () => {
           </div>
         </div>
         <section className="py-12">
-          <div className="text-center text-2xl font-semibold mb-8">Some frames of my life when I'm off work</div>
+          <div className="text-center text-2xl font-semibold mb-8">Some frames of my life when I&apos;m off work</div>
           <div className="flex space-x-4 overflow-x-auto">
             <div className="flex-shrink-0 w-80 h-80 bg-gray-200"></div>
             <div className="flex-shrink-0 w-80 h-80 bg-gray-200"></div>

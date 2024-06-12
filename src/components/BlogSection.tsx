@@ -1,8 +1,9 @@
 import * as React from "react";
+import Image from "next/image";
 
 export function BlogSection() {
   return (
-    <div className="flex flex-col px-5">
+    <div className="flex flex-col px-5 py-12">
       <div className="flex gap-5 items-center self-start font-bold leading-[150%] text-neutral-700 max-md:flex-wrap">
         <div className="self-stretch my-auto text-4xl underline">Blog</div>
         <div className="shrink-0 self-stretch w-0.5 bg-zinc-600 h-[76px]" />
@@ -102,11 +103,9 @@ export function BlogSection() {
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
           <div className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
             <div className="flex flex-col py-0.5 text-base leading-6 text-neutral-700 max-md:mt-10">
-              <img
-                loading="lazy"
-                srcSet="..."
-                className="w-full aspect-[1.85]"
-              />
+              <div className="w-full aspect-[1.85]">
+                <Image alt="" loading="lazy" src="/" width={0} height={0} />
+              </div>
               <div className="mt-5 text-lg font-bold text-neutral-700">
                 Computational Social Science course
               </div>
@@ -133,11 +132,16 @@ export function BlogSection() {
           </div>
           <div className="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
             <div className="flex flex-col grow py-0.5 text-base leading-6 text-neutral-700 max-md:mt-10">
-              <img
-                loading="lazy"
-                srcSet="..."
-                className="w-full aspect-[1.85]"
-              />
+              <div className="w-full aspect-[1.85]">
+                <Image
+                  loading="lazy"
+                  src="/path/to/your/image.jpg"
+                  alt="Description of the image"
+                  height={0}
+                  width={0}
+                  // Adjust the height according to your image aspect ratio
+                />
+              </div>
               <div className="mt-5 text-lg font-bold text-neutral-700">
                 Bordeaux - the gorgeous cliche{" "}
               </div>
@@ -149,7 +153,7 @@ export function BlogSection() {
                 <div>9 min read</div>
               </div>
               <div className="mt-4 max-md:mr-1.5">
-                Hi dear readers, I'm happy to finally finish{" "}
+                Hi dear readers, I&apos;m happy to finally finish{" "}
               </div>
               <div className="mt-2.5 max-md:mr-1.5">
                 the post about my trip to France in 2019.{" "}
@@ -167,10 +171,13 @@ export function BlogSection() {
           </div>
           <div className="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
             <div className="flex flex-col grow text-base leading-6 text-neutral-700 max-md:mt-10">
-              <img
+              <Image
                 loading="lazy"
-                srcSet="..."
-                className="w-full aspect-[1.85]"
+                src="/path/to/your/image.jpg"
+                alt="Description of the image"
+                height={0}
+                width={0}
+                // Adjust the height according to your image aspect ratio
               />
               <div className="mt-5 text-lg font-bold text-neutral-700">
                 The beauty of German aesthetic - Die{" "}

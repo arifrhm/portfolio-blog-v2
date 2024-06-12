@@ -35,7 +35,7 @@ export function Footer() {
               </div>
               <div className="flex gap-0 px-px mt-6 text-sm leading-5 whitespace-nowrap max-md:flex-wrap max-md:max-w-full">
                 <div className="justify-center items-start px-4 py-5 bg-zinc-800 text-ellipsis text-white text-opacity-50 max-md:pr-5">
-                  Enter your Email here
+                  <input type="email" className="bg-zinc-800 " placeholder="Enter your Email here" />
                 </div>
                 <div className="justify-center items-start px-4 py-5 bg-zinc-900 text-ellipsis text-zinc-300 max-md:pr-5">
                   Subscribe
@@ -48,4 +48,3 @@ export function Footer() {
     </div>
   );
 }
-

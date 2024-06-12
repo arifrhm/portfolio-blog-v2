@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 70, 130, 180; /* Warna biru laut */
-  --background-end-rgb: 70, 130, 180;   /* Warna biru laut */
-}
 
 @media (prefers-color-scheme: dark) {
   :root {

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const portfolioItems = [
   {
@@ -35,7 +36,8 @@ const PortfolioSection: React.FC = () => {
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold">Portfolio</h2>
           <p className="mt-4 text-lg text-gray-600">
-            My works in software & data engineering, data science and researches.
+            My works in software & data engineering, data science and
+            researches.
           </p>
         </div>
         <div className="text-center mb-8">
@@ -65,12 +67,23 @@ const PortfolioSection: React.FC = () => {
         </div>
         <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {portfolioItems.map((item, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div
+              key={index}
+              className="bg-white rounded-lg shadow-lg overflow-hidden"
+            >
               <a href="#" className="block">
-                <img src={item.imageUrl} alt={item.title} className="w-full h-48 object-cover" />
+                <Image
+                  src={item.imageUrl}
+                  alt={item.title}
+                  width={400}
+                  height={300}
+                  className="object-cover"
+                />{" "}
               </a>
               <div className="p-4">
-                <a href="#" className="block text-xl font-semibold mb-2">{item.title}</a>
+                <a href="#" className="block text-xl font-semibold mb-2">
+                  {item.title}
+                </a>
                 <div className="flex justify-between items-center text-sm text-gray-600 mb-2">
                   <span>{item.date}</span>
                   <span>{item.readTime}</span>

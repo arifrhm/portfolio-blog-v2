@@ -1,14 +1,19 @@
 import * as React from "react";
+import Image from "next/image";
 
 export function AboutMeSection() {
   return (
     <div className="flex flex-col">
       <div className="flex flex-col items-center pl-8 w-full max-md:pl-5 max-md:max-w-full">
-        <img
-          loading="lazy"
-          srcSet="..."
-          className="w-full aspect-[2.5] max-w-[1090px] max-md:max-w-full"
-        />
+        <div className="w-full aspect-[2.5] max-w-[1090px] max-md:max-w-full">
+          <Image
+            loading="lazy"
+            src="/"
+            alt="Description of the image"
+            width={0}
+            height={0}
+          />
+        </div>
         <div className="z-10 mt-36 w-full max-w-[979px] max-md:mt-10 max-md:max-w-full">
           <div className="flex gap-5 max-md:flex-col max-md:gap-0">
             <div className="flex flex-col w-[18%] max-md:ml-0 max-md:w-full">
@@ -36,7 +41,7 @@ export function AboutMeSection() {
             <div className="flex flex-col w-[61%] max-md:ml-0 max-md:w-full">
               <div className="flex flex-col mt-7 text-base leading-6 text-neutral-700 max-md:mt-10">
                 <div className="max-md:mr-2.5">
-                  I'm excited about new challenges as a data{" "}
+                  I&apos;m excited about new challenges as a data{" "}
                 </div>
                 <div className="max-md:mr-2.5">
                   scientist or a data-driven business consultant.
@@ -62,11 +67,15 @@ export function AboutMeSection() {
           </div>
         </div>
       </div>
-      <img
-        loading="lazy"
-        srcSet="..."
-        className="w-full aspect-[1.92] max-md:max-w-full"
-      />
+      <div className="w-full aspect-[1.92] max-md:max-w-full">
+        <Image
+          loading="lazy"
+          src="/path/to/your/image.jpg"
+          alt="Description of the image"
+          width={0}
+          height={0}
+        />
+      </div>
     </div>
   );
 }

@@ -1,8 +1,9 @@
 import * as React from "react";
+import Image from "next/image"; // Import Image component from next/image
 
 export function Publication() {
   return (
-    <div className="flex flex-col px-5">
+    <div className="flex flex-col px-5 py-12">
       <div className="w-full text-lg font-bold leading-7 text-neutral-700 max-md:max-w-full">
         Some current publications
       </div>
@@ -10,10 +11,13 @@ export function Publication() {
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
           <div className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
             <div className="flex flex-col grow py-0.5 text-base leading-6 text-neutral-700 max-md:mt-8">
-              <img
+              <Image // Replace img with Image
+                alt=""
                 loading="lazy"
-                srcSet="..."
+                src="/"
                 className="w-full aspect-[1.85]"
+                width={0}
+                height={0}
               />
               <div className="mt-5 text-lg font-bold text-neutral-700">
                 Data Engineering in Ad Tech{" "}
@@ -26,7 +30,7 @@ export function Publication() {
                 <div>11 min read</div>
               </div>
               <div className="mt-4 max-md:mr-1.5">
-                I’ve been working for a big Ad Tech{" "}
+                I&apos;ve been working for a big Ad Tech{" "}
               </div>
               <div className="mt-2 mr-7 max-md:mr-2.5">
                 enterprise (manages ~$2B in media spend{" "}
@@ -44,10 +48,13 @@ export function Publication() {
           </div>
           <div className="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
             <div className="flex flex-col py-0.5 text-base leading-6 text-neutral-700 max-md:mt-8">
-              <img
+              <Image // Replace img with Image
+                alt=""
                 loading="lazy"
-                srcSet="..."
+                src="/"
                 className="w-full aspect-[1.85]"
+                width={0}
+                height={0}
               />
               <div className="mt-5 text-lg font-bold text-neutral-700">
                 Computational Social Science course
@@ -75,10 +82,13 @@ export function Publication() {
           </div>
           <div className="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
             <div className="flex flex-col grow py-0.5 text-base leading-6 text-neutral-700 max-md:mt-8">
-              <img
+              <Image // Replace img with Image
+                alt=""
                 loading="lazy"
-                srcSet="..."
+                src="/"
                 className="w-full aspect-[1.85]"
+                width={0}
+                height={0}
               />
               <div className="mt-5 text-lg font-bold text-neutral-700">
                 AI for hiring — recommendation{" "}
@@ -112,4 +122,3 @@ export function Publication() {
     </div>
   );
 }
-
