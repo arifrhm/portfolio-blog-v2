@@ -1,53 +1,51 @@
-const Footer = () => {
-    return (
-      <footer className="bg-white text-black py-4 mt-auto">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Left section */}
-            <div>
-              <div className="font-bold">
-                Andrew <span className="font-normal">Kurochkin</span>
+import * as React from "react";
+
+export function Footer() {
+  return (
+    <div className="flex justify-center items-center px-16 py-14 bg-black max-md:px-5">
+      <div className="w-full max-w-[1110px] max-md:max-w-full">
+        <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+          <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+            <div className="flex flex-col max-md:mt-10 max-md:max-w-full">
+              <div className="text-lg font-bold leading-7 text-white max-md:max-w-full">
+                Andrew <span className="text-white ">Kurochkin</span>
               </div>
-              <p>Lviv, Ukraine</p>
-              <p>me(at)andrewkurochkin.com</p>
-            </div>
-  
-            {/* Right section */}
-            <div className="md:pl-4">
-              <div className="font-bold">Stay tuned</div>
-              <p>Join 132 other followers and sign up to receive the latest news from me.</p>
-              <form className="mt-2 flex">
-                <input
-                  type="text"
-                  placeholder="Enter your Email here"
-                  className="border border-gray-300 px-2 py-1 rounded-l mr-2"
-                />
-                <button
-                  type="submit"
-                  className="bg-blue-500 text-white px-4 py-1 rounded-r"
-                >
-                  Subscribe
-                </button>
-              </form>
+              <div className="shrink-0 mt-8 h-[47px] max-md:max-w-full" />
+              <div className="flex gap-5 justify-between self-start mt-14 ml-8 text-base leading-6 text-zinc-400 max-md:mt-10 max-md:ml-2.5">
+                <div className="justify-center py-2 underline whitespace-nowrap">
+                  linkedin
+                </div>
+                <div className="justify-center py-2 underline whitespace-nowrap">
+                  github
+                </div>
+                <div className="justify-center py-2 underline">film photo</div>
+              </div>
             </div>
           </div>
-  
-          {/* Social links */}
-          <div className="mt-4 flex space-x-4">
-            <a target="_blank" href="https://www.linkedin.com/in/sangreel/" className="hover:underline">
-              LinkedIn
-            </a>
-            <a target="_blank" href="https://github.com/SanGreel" className="hover:underline">
-              GitHub
-            </a>
-            <a target="_blank" href="https://t.me/s/film1319" className="hover:underline">
-              Film Photo
-            </a>
+          <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+            <div className="flex flex-col grow pt-2 text-base leading-6 max-md:mt-10 max-md:max-w-full">
+              <div className="text-lg font-bold text-white max-md:max-w-full">
+                Stay tuned
+              </div>
+              <div className="mt-9 mr-11 text-zinc-400 max-md:mr-2.5 max-md:max-w-full">
+                Join 132 other followers and sign up to receive the latest news{" "}
+              </div>
+              <div className="mr-11 text-zinc-400 max-md:mr-2.5 max-md:max-w-full">
+                from me.
+              </div>
+              <div className="flex gap-0 px-px mt-6 text-sm leading-5 whitespace-nowrap max-md:flex-wrap max-md:max-w-full">
+                <div className="justify-center items-start px-4 py-5 bg-zinc-800 text-ellipsis text-white text-opacity-50 max-md:pr-5">
+                  Enter your Email here
+                </div>
+                <div className="justify-center items-start px-4 py-5 bg-zinc-900 text-ellipsis text-zinc-300 max-md:pr-5">
+                  Subscribe
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </footer>
-    );
-  };
-  
-  export default Footer;
-  
+      </div>
+    </div>
+  );
+}
+

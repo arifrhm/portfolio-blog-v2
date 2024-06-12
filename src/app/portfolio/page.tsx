@@ -1,16 +1,16 @@
-import Navbar from "@/components/Navbar";
+import { Footer } from '@/components/Footer';
+import Header from '@/components/Header';
+import PortfolioSection from '@/components/PortfolioSection';
+import { Publication } from '@/components/Publication';
+import React from 'react';
 
-// src/pages/portfolio.tsx
-const Portfolio = () => {
-  return (
-    <div>
-      <Navbar></Navbar>
-      <div>
-        <h1 className="text-4xl font-bold mb-4">Portfolio</h1>
-        <p>This is the portfolio page.</p>
-      </div>
-    </div>
-  );
-};
+const BlogPage = () => (
+  <div className="App">
+    <Header />
+    <PortfolioSection />
+    <Footer />
+  </div>
+);
 
-export default Portfolio;
+export default BlogPage;
+
