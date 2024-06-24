@@ -8,7 +8,7 @@ const Header: React.FC = () => {
       <div className="container mx-auto flex justify-between items-center px-4">
         <div className="text-lg font-bold">
           <a href="/" className="hover:underline">
-            <span className="font-extrabold">Andrew</span> Kurochkin
+            <span className="font-extrabold">Gita</span> Suputra
           </a>
         </div>
         <nav className="flex space-x-6">

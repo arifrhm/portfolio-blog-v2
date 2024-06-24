@@ -8,17 +8,15 @@ export function Footer() {
           <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
             <div className="flex flex-col max-md:mt-10 max-md:max-w-full">
               <div className="text-lg font-bold leading-7 text-white max-md:max-w-full">
-                Andrew <span className="text-white ">Kurochkin</span>
+                Gita <span className="text-white ">Suputra</span>
               </div>
-              <div className="shrink-0 mt-8 h-[47px] max-md:max-w-full" />
-              <div className="flex gap-5 justify-between self-start mt-14 ml-8 text-base leading-6 text-zinc-400 max-md:mt-10 max-md:ml-2.5">
+              <div className="flex gap-5 justify-between self-start mt-14 text-base leading-6 text-zinc-400 max-md:mt-10 max-md:ml-2.5">
                 <div className="justify-center py-2 underline whitespace-nowrap">
                   linkedin
                 </div>
                 <div className="justify-center py-2 underline whitespace-nowrap">
                   github
                 </div>
-                <div className="justify-center py-2 underline">film photo</div>
               </div>
             </div>
           </div>

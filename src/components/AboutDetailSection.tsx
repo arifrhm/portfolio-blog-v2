@@ -7,73 +7,56 @@ const AboutDetailSection: React.FC = () => {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold">About</h1>
           <h2 className="text-xl mt-4 text-gray-600">
-            I am a data scientist and a researcher. My passion is working with hidden pattern recognition, data mining, and dataviz.
+            Hello, my name is Gita. I am dedicated and hard working person who believe in honesty and service oriented.
+            From my experience for more than 10 years working in filling, handling, manipulating and finding meaning of every data,
+            I can say I&apos;m expert enough.
+
           </h2>
         </div>
         <div className="flex flex-col lg:flex-row items-center mb-12">
-          <div className="w-48 h-48 bg-gray-200 rounded-full mb-8 lg:mb-0 lg:mr-8"></div>
-          <div className="lg:ml-8">
-            <h2 className="text-2xl font-bold">Andrew Kurochkin</h2>
+          <div className="w-64 h-64 bg-gray-200 rounded-full mb-8 lg:mb-0 lg:mr-8"></div>
+          <div className="lg:ml-8 lg:w-2/3">
+            <h2 className="text-2xl font-bold">Gita Suputra</h2>
             <p className="mt-4 text-gray-600">
-              My goal is to optimize world processes by using data. If you are interested in cooperation or would like to discuss anything, please 
+              My background education is Mechanical Engineering and I like to handle value and data. Seeing every line trend helps me to understand quickly what&apos;s going on in every chart, table, or trend.
+              I&apos;m very skilled in data entry, Microsoft Excel, Microsoft Word, PDF, Python, data analytics, and machine learning. I have 4 years of experience in Python, data engineering, and data science. Hiring me means you will get many services with one-time investment.
               <a href="/contact#feel-free-to-contact-me" className="text-blue-500"> contact me</a>.
             </p>
             <p className="mt-4 text-gray-600">
-              Lviv, Ukraine<br />
-              me(at)andrewkurochkin.com
+              gitasuputra@gmail.com
             </p>
             <p className="mt-4">
               <a href="/media/doc/CV_Andrew_Kurochkin.pdf" target="_blank" className="text-blue-500">Download my CV</a>
             </p>
           </div>
         </div>
-       <div className="lg:grid lg:grid-cols-2 lg:gap-12">
+        <div className="lg:grid lg:grid-cols-2 lg:gap-12">
           <div>
             <div className="mb-12">
               <div className="text-xl font-semibold mb-4" id="education">Education</div>
               <div className="space-y-4">
                 <div>
-                  <span className="font-bold">Data science / Master&apos;s degree</span>
-                  <p className="text-gray-600">Ukrainian Catholic University (UCU)</p>
-                  <p className="text-gray-600">2018 - 2020</p>
+                  <span className="font-bold">Associate Mechanical Engineer</span>
+                  <p className="text-gray-600">Bali State Politechnique</p>
+                  <p className="text-gray-600">2006 - 2009</p>
                 </div>
                 <div>
-                  <span className="font-bold">Software engineer / Bachelor&apos;s degree</span>
-                  <p className="text-gray-600">National University &quot;Lviv Polytechnics&quot;</p>
-                  <p className="text-gray-600">2015 - 2017</p>
-                </div>
-                <div>
-                  <span className="font-bold">Software engineer / Associate&apos;s degree</span>
-                  <p className="text-gray-600">TC NU &quot;Lviv Polytechnics&quot;</p>
-                  <p className="text-gray-600">2011 - 2015</p>
+                  <span className="font-bold">Data Science Certification</span>
+                  <p className="text-gray-600">Tripleten</p>
+                  <p className="text-gray-600">2022 - 2023</p>
                 </div>
               </div>
             </div>
             <div className="mb-12">
               <div className="text-xl font-semibold mb-4" id="skills">Skills</div>
               <div className="space-y-2 text-gray-600">
-                <p>Computational Social Science<br /> Behavior Analysis<br /> System Design<br /> Research<br /> Negotiation<br /> Communication<br /> Presentation<br /> Data Analytics<br /> Programming<br /> Problem Solving<br /> Database Design<br /> Data Visualization<br /> Team Organizing<br /> Leadership</p>
+                <p>Data Cleaning<br /> Data Validation<br /> Data Integration<br /> Data Manipulation<br /> Data Visualization<br /> Data Analytic<br /> Data Science<br /> Machine learning : NLP<br /> Python<br /> Excel<br /> Google Spreadsheet</p>
               </div>
             </div>
             <div className="mb-12">
               <div className="text-xl font-semibold mb-4" id="tools-frameworks">Tools & Frameworks</div>
               <div className="space-y-2 text-gray-600">
-                <p>python, R<br /> GCP, AWS<br /> UNIX / Linux<br /> BQ, ETL, postgreSQL, MySQL<br /> BI (Looker, etc)<br /> openCV, scikit-learn, numpy, pandas, ggplot<br /> GIT, CI/CD, jira<br /> MTurk, A/B testing<br /> Math Modeling</p>
-              </div>
-            </div>
-            <div className="mb-12">
-              <div className="text-xl font-semibold mb-4" id="hobbies">Hobbies</div>
-              <div className="space-y-2 text-gray-600">
-                <p><a href="https://t.me/s/film1319" target="blank" className="text-blue-500">film photo</a>, box, vinyl</p>
-              </div>
-            </div>
-            <div className="mb-12">
-              <div className="text-xl font-semibold mb-4" id="links">Links</div>
-              <div className="space-y-2 text-gray-600">
-                <p><a href="https://github.com/SanGreel" className="text-blue-500">github</a><br />
-                  <a href="https://www.linkedin.com/in/sangreel/" className="text-blue-500">linkedin</a><br />
-                  <a href="/media/doc/CV_Andrew_Kurochkin.pdf" target="_blank" className="text-blue-500">download CV</a>
-                </p>
+                <p>Python<br /> GCP<br /> PostgreSQL<br /> Open AI<br /> Power BI, Google Looker<br /> Scikit-Learn, pandas, Transformer, Tensorflow, Pytorch</p>
               </div>
             </div>
           </div>
@@ -82,39 +65,36 @@ const AboutDetailSection: React.FC = () => {
               <div className="text-xl font-semibold mb-4" id="work">Work</div>
               <div className="space-y-4">
                 <div>
-                  <span className="font-bold">Teaching Assistant</span>
-                  <p className="text-gray-600">National University of Kyiv-Mohyla Academy<br />01/2022 - present</p>
+                  <span className="font-bold">Turbine Operator</span>
+                  <p className="text-gray-600">Steam Driven Power Plant Paiton 9<br />2010 - 2015</p>
                 </div>
                 <div>
-                  <span className="font-bold">Tech Lead</span>
-                  <p className="text-gray-600">Capgemini<br />11/2021 - 11/2022</p>
+                  <span className="font-bold">Production Supervisor</span>
+                  <p className="text-gray-600">Machine Gas Power Plant Arun<br />2015 - 2022</p>
                 </div>
                 <div>
-                  <span className="font-bold">Data Engineer</span>
-                  <p className="text-gray-600">Lohika<br />11/2017 - 11/2021</p>
+                  <span className="font-bold">Production Supervisor</span>
+                  <p className="text-gray-600">Machine Gas Power Plant Arun<br />2022 - Present</p>
                 </div>
                 <div>
-                  <span className="font-bold">Data Scientist & Researcher</span>
-                  <p className="text-gray-600">Palo Alto Insight<br />02/2018 - 04/2018</p>
+                  <span className="font-bold">AI Developer</span>
+                  <p className="text-gray-600">Freelance<br />2022 - Present</p>
                 </div>
-                <div>
-                  <span className="font-bold">Principal Developer</span>
-                  <p className="text-gray-600">Headliner<br />10/2015 - 11/2017</p>
-                </div>
-                <div>
-                  <span className="font-bold">Full-Stack Web Developer</span>
-                  <p className="text-gray-600">Freelancer<br />01/2011 - 10/2015</p>
-                </div>
+              </div>
+            </div> 
+            <div className="mb-12">
+              <div className="text-xl font-semibold mb-4" id="links">Links</div>
+              <div className="space-y-2 text-gray-600">
+                <p><a href="https://github.com/gita87" className="text-blue-500">github</a><br />
+                  <a href="https://www.linkedin.com/in/gita-suputra-423242219/" className="text-blue-500">linkedin</a><br />
+                  <a href="/media/doc/CV_Andrew_Kurochkin.pdf" target="_blank" className="text-blue-500">download CV</a>
+                </p>
               </div>
             </div>
             <div className="mb-12">
-              <div className="text-xl font-semibold mb-4" id="other-activities">Other Activities</div>
-              <div className="space-y-4 text-gray-600">
-                <p>Lecturer and Mentor at National University of Kyiv-Mohyla Academy</p>
-                <p>Conducted course “Computational Social Science” at Ukrainian Catholic University</p>
-                <p>Best presentation award at <a href="https://waset.org/computational-social-science-conference-in-december-2020-in-amsterdam" target="_blank" className="text-blue-500">ICCSS 2020: XIV. International Conference on Computational Social Science</a></p>
-                <p>Poster at <a href="https://iriss.stanford.edu/css/conferences/2020-conference-computational-sociology/agenda" target="_blank" className="text-blue-500">Stanford 2020 Conference on Computational Sociology</a></p>
-                <p>Program committee member in the <a href="https://facebook.com/groups/morning.lohika" target="_blank" className="text-blue-500">“Morning at Lohika”</a> tech talks, 2018-2019</p>
+              <div className="text-xl font-semibold mb-4" id="hobbies">Hobbies</div>
+              <div className="space-y-2 text-gray-600">
+                <p>Meditation, Learning Saxophone</p>
               </div>
             </div>
           </div>
