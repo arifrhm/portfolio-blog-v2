@@ -14,53 +14,33 @@ const SearchBar = () => {
 
   return (
     <div className="flex items-center">
-      <button className="focus:outline-none mr-2" onClick={handleClick}>
-        <svg
-          className="w-5 h-5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"
-          ></path>
-        </svg>
+      <button className="focus:outline-none mr-2 rounded-full" onClick={handleClick}>
+        <SearchIcon className="w-6 h-6" />
+        <span className="sr-only">Open search</span>
       </button>
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+        <div className="fixed inset-0 bg-background/80 backdrop-blur-md flex justify-center items-center">
           <div className="bg-white rounded-md p-4">
             <div className="flex justify-between items-center">
               <h2 className="text-lg font-bold">Search</h2>
-              <button type="button" onClick={handleCloseModal}>
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  ></path>
-                </svg>
+              <button type="button" onClick={handleCloseModal} className="rounded-full">
+                <CloseIcon className="w-6 h-6" />
+                <span className="sr-only">Close</span>
               </button>
             </div>
-            {/* Search input form */}
-            <input
-              type="text"
-              className="w-80 mx-auto rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-1 focus:ring-indigo-500 mt-4"
-              placeholder="Enter your search term"
-            />
-            <button className="bg-blue-500 text-white px-4 py-2 rounded-md mt-4 focus:outline-none hover:bg-blue-700">
-              Search
-            </button>
+            <div className="flex items-center w-full max-w-4xl mx-auto px-4 md:px-0">
+              <div className="flex-1">
+                <input
+                  type="search"
+                  placeholder="Search..."
+                  className="w-full py-2 text-base bg-transparent border-none focus:ring-0"
+                />
+              </div>
+              <button className="rounded-full">
+                <SearchIcon className="w-6 h-6" />
+                <span className="sr-only">Search</span>
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -68,5 +48,45 @@ const SearchBar = () => {
   );
 };
 
+function SearchIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="11" cy="11" r="8" />
+      <path d="m21 21-4.3-4.3" />
+    </svg>
+  );
+}
+
+function CloseIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  );
+}
+
 export default SearchBar;
+
 
