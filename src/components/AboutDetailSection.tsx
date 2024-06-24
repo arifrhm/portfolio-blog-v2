@@ -99,15 +99,6 @@ const AboutDetailSection: React.FC = () => {
             </div>
           </div>
         </div>
-        <section className="py-12">
-          <div className="text-center text-2xl font-semibold mb-8">Some frames of my life when I&apos;m off work</div>
-          <div className="flex space-x-4 overflow-x-auto">
-            <div className="flex-shrink-0 w-80 h-80 bg-gray-200"></div>
-            <div className="flex-shrink-0 w-80 h-80 bg-gray-200"></div>
-            <div className="flex-shrink-0 w-80 h-80 bg-gray-200"></div>
-            <div className="flex-shrink-0 w-80 h-80 bg-gray-200"></div>
-          </div>
-        </section>
       </div>
     </section>
   );
