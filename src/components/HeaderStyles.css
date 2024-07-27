@@ -1,0 +1,20 @@
+.line-through::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 2px;
+    width: 100%;
+    background-color: currentColor;
+  }
+  
+  .hover\:line-through:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 2px;
+    width: 100%;
+    background-color: currentColor;
+  }
+  

@@ -31,14 +31,15 @@ const portfolioItems = [
 
 const PortfolioSection: React.FC = () => {
   return (
-    <section className="py-12">
+    <section className="pt-20 py-12">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold">Portfolio</h2>
-          <p className="mt-4 text-lg text-gray-600">
+        <div className="container mx-auto box-title mb-8 flex items-center space-x-2">
+          <h1 className="text-3xl font-bold">Portfolio</h1>
+          <div className="shrink-0 w-0.5 bg-zinc-600" style={{ height: '76px' }}></div>
+          <h2 className="flex-auto self-stretch my-auto text-lg">
             My works in software & data engineering, data science and
             researches.
-          </p>
+          </h2>
         </div>
         <div className="text-center mb-8">
           <span className="text-xl font-semibold">Tag filter:</span>

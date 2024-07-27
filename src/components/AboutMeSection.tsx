@@ -70,10 +70,10 @@ export function AboutMeSection() {
       <div className="w-full aspect-[1.92] max-md:max-w-full">
         <Image
           loading="lazy"
-          src="/path/to/your/image.jpg"
+          src="/gita_profile_pic.jpg"
           alt="Description of the image"
-          width={0}
-          height={0}
+          width={256}
+          height={256}
         />
       </div>
     </div>

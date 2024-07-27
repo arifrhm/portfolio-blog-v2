@@ -1,9 +1,16 @@
 import React from "react";
+import Image from 'next/image';
 
 const AboutDetailSection: React.FC = () => {
   return (
-    <section className="py-12 bg-white" rel="main">
+    <section className="pt-20 py-12 bg-white" rel="main">
       <div className="container mx-auto px-4">
+        <div className="box-title mb-8 flex items-center space-x-2">
+          <h1 className="text-3xl font-bold">About</h1>
+          <div className="shrink-0 w-0.5 bg-zinc-600" style={{ height: '76px' }}></div>
+          <h2 className="text-xl">I am a data scientist and researcher with a passion for uncovering hidden patterns,
+            data mining, and data visualization.</h2>
+        </div>
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold">About</h1>
           <h2 className="text-xl mt-4 text-gray-600">
@@ -14,7 +21,15 @@ const AboutDetailSection: React.FC = () => {
           </h2>
         </div>
         <div className="flex flex-col lg:flex-row items-center mb-12">
-          <div className="w-64 h-64 bg-gray-200 rounded-full mb-8 lg:mb-0 lg:mr-8"></div>
+          <div className="w-64 h-64 bg-gray-200 rounded-full mb-8 lg:mb-0 lg:mr-8 overflow-hidden flex items-center justify-center">
+            <Image
+              src="/gita_profile_pic.jpg" // Replace with the path to your image
+              alt="Description of image"
+              width={256}
+              height={256}
+              className="object-cover"
+            />
+          </div>
           <div className="lg:ml-8 lg:w-2/3">
             <h2 className="text-2xl font-bold">Gita Suputra</h2>
             <p className="mt-4 text-gray-600">
@@ -26,7 +41,7 @@ const AboutDetailSection: React.FC = () => {
               gitasuputra@gmail.com
             </p>
             <p className="mt-4">
-              <a href="/media/doc/CV_Andrew_Kurochkin.pdf" target="_blank" className="text-blue-500">Download my CV</a>
+              <a href="https://bit.ly/CV-Gita-Suputra" target="_blank" className="text-blue-500">Download my CV</a>
             </p>
           </div>
         </div>
@@ -81,13 +96,13 @@ const AboutDetailSection: React.FC = () => {
                   <p className="text-gray-600">Freelance<br />2022 - Present</p>
                 </div>
               </div>
-            </div> 
+            </div>
             <div className="mb-12">
               <div className="text-xl font-semibold mb-4" id="links">Links</div>
               <div className="space-y-2 text-gray-600">
                 <p><a href="https://github.com/gita87" className="text-blue-500">github</a><br />
                   <a href="https://www.linkedin.com/in/gita-suputra-423242219/" className="text-blue-500">linkedin</a><br />
-                  <a href="/media/doc/CV_Andrew_Kurochkin.pdf" target="_blank" className="text-blue-500">download CV</a>
+                  <a href="https://bit.ly/CV-Gita-Suputra" target="_blank" className="text-blue-500">download CV</a>
                 </p>
               </div>
             </div>

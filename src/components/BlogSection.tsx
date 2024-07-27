@@ -1,214 +1,96 @@
 import * as React from "react";
 import Image from "next/image";
 
+
+const portfolioItems = [
+  {
+    title: "Data Engineering in Ad Tech enterprise",
+    description:
+      "I’ve been working for a big Ad Tech enterprise (manages ~$2B in media spend and deploys campaigns in 70 markets, clients portfolio including: Google, Viber, etc). The company had a huge amount of...",
+    date: "2017-2022",
+    readTime: "11 min read",
+    imageUrl: "/media/img/post/preview/m_2p5x_1.png",
+  },
+  {
+    title: "AI for hiring — recommendation system for recruiters",
+    description:
+      "This is a recommendation system for recruiters that estimates how new candidates suit available vacancies. It was developed for a real IT company based on their data after consulting experts. The...",
+    date: "2017",
+    readTime: "5 min read",
+    imageUrl: "/media/img/post/preview/m_2p5x_2.png",
+  },
+  {
+    title: "Panacea. CRM for city Ambulance",
+    description:
+      "This project, Panacea, is a system aimed at storing data about city ambulance calls, building flexible dashboards, statistics and people search. BackgroundOnce, in 2015 Lviv Governor visited Lviv main ambulance...",
+    date: "2015-2018",
+    readTime: "4 min read",
+    imageUrl: "/media/img/post/preview/m_2p5x_3.png",
+  },
+  // Add more items as needed
+];
+
 export function BlogSection() {
   return (
-    <div className="flex flex-col px-5 py-12">
-      <div className="flex gap-5 items-center self-start font-bold leading-[150%] text-neutral-700 max-md:flex-wrap">
-        <div className="self-stretch my-auto text-4xl underline">Blog</div>
-        <div className="shrink-0 self-stretch w-0.5 bg-zinc-600 h-[76px]" />
-        <div className="flex-auto self-stretch my-auto text-lg">
-          Posts about data science, AI, ML and other.
-        </div>
+    <div className="pt-20 flex flex-col px-5 py-12">
+      <div className="container mx-auto box-title mb-8 flex items-center space-x-2">
+        <h1 className="text-3xl font-bold">Blog</h1>
+        <div className="shrink-0 w-0.5 bg-zinc-600" style={{ height: '76px' }}></div>
+        <h2 className="flex-auto self-stretch my-auto text-lg">Posts about data science, AI, ML and other.</h2>
       </div>
-      <div className="mt-8 w-full text-base font-semibold leading-6 text-neutral-700 max-md:max-w-full">
-        Tag filter:
-      </div>
-      <div className="flex gap-2.5 justify-between self-start mt-7 text-base leading-6 max-md:flex-wrap">
-        <div className="underline text-neutral-700">all</div>
-        <div className="flex gap-0">
-          <div className="text-neutral-700">#</div>
-          <div className="flex-auto text-neutral-700">own product</div>
-        </div>
-        <div className="flex gap-0">
-          <div className="text-neutral-700">#</div>
-          <div className="flex-auto text-neutral-700">tips and tricks</div>
-        </div>
-        <div className="flex gap-0 whitespace-nowrap">
-          <div className="text-neutral-700">#</div>
-          <div className="text-neutral-700">blogging</div>
-        </div>
-        <div className="flex gap-0 whitespace-nowrap">
-          <div className="text-neutral-700">#</div>
-          <div className="text-neutral-700">photo</div>
-        </div>
-        <div className="flex gap-0">
-          <div className="text-neutral-700">#</div>
-          <div className="flex-auto text-neutral-700">
-            Computational Social Science
+
+      <div className="container mx-auto text-center mb-8">
+          <span className="text-xl font-semibold">Tag filter:</span>
+          <div className="mt-2 space-x-2">
+            <button className="tag">#ML</button>
+            <button className="tag">#API</button>
+            <button className="tag">#C</button>
+            <button className="tag">#phantomJS</button>
+            <button className="tag">#dashboard</button>
+            <button className="tag">#NASM</button>
+            <button className="tag">#web project</button>
+            <button className="tag">#data</button>
+            <button className="tag">#recommendation system</button>
+            <button className="tag">#arduino</button>
+            <button className="tag">#bot</button>
+            <button className="tag">#statistics</button>
+            <button className="tag">#CRM</button>
+            <button className="tag">#own product</button>
+            <button className="tag">#assembler</button>
+            <button className="tag">#data engineering</button>
+            <button className="tag">#web scraping</button>
+            <button className="tag">#hardware</button>
+            <button className="tag">#hard problem</button>
           </div>
         </div>
-        <div className="flex gap-0 whitespace-nowrap">
-          <div className="text-neutral-700">#</div>
-          <div className="text-neutral-700">logistics</div>
-        </div>
-        <div className="flex gap-0 whitespace-nowrap">
-          <div className="text-neutral-700">#</div>
-          <div className="text-neutral-700">blog</div>
-        </div>
-        <div className="text-neutral-700">motivation</div>
-        <div className="flex gap-0 whitespace-nowrap">
-          <div className="text-neutral-700">#</div>
-          <div className="text-neutral-700">traveling</div>
-        </div>
-        <div className="flex gap-0 self-start whitespace-nowrap">
-          <div className="text-neutral-700">#</div>
-          <div className="text-neutral-700">Berlin</div>
-        </div>
-      </div>
-      <div className="flex gap-3 items-start mt-3.5 text-base leading-6 max-md:flex-wrap">
-        <div className="flex gap-0 whitespace-nowrap">
-          <div className="text-neutral-700">#</div>
-          <div className="text-neutral-700">CSS</div>
-        </div>
-        <div className="flex gap-0 self-stretch whitespace-nowrap">
-          <div className="text-neutral-700">#</div>
-          <div className="text-neutral-700">snippet</div>
-        </div>
-        <div className="self-stretch text-neutral-700">how to</div>
-        <div className="flex gap-0 whitespace-nowrap">
-          <div className="text-neutral-700">#</div>
-          <div className="text-neutral-700">aesthetics</div>
-        </div>
-        <div className="flex gap-0 whitespace-nowrap">
-          <div className="text-neutral-700">#</div>
-          <div className="text-neutral-700">Bordeaux</div>
-        </div>
-        <div className="self-stretch text-neutral-700">teaching</div>
-        <div className="flex gap-0 self-stretch whitespace-nowrap">
-          <div className="text-neutral-700">#</div>
-          <div className="text-neutral-700">regex</div>
-        </div>
-        <div className="flex gap-0 whitespace-nowrap">
-          <div className="text-neutral-700">#</div>
-          <div className="text-neutral-700">urban</div>
-        </div>
-        <div className="flex gap-0 whitespace-nowrap">
-          <div className="text-neutral-700">#</div>
-          <div className="text-neutral-700">France</div>
-        </div>
-        <div className="flex gap-0 whitespace-nowrap">
-          <div className="text-neutral-700">#</div>
-          <div className="text-neutral-700">KMA</div>
-        </div>
-        <div className="flex gap-0 whitespace-nowrap">
-          <div className="text-neutral-700">#</div>
-          <div className="text-neutral-700">architecture</div>
-        </div>
-        <div className="flex-auto self-stretch text-neutral-700">
-          trip report
-        </div>
-      </div>
-      <div className="mt-12 w-full max-md:mt-10 max-md:max-w-full">
-        <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-          <div className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
-            <div className="flex flex-col py-0.5 text-base leading-6 text-neutral-700 max-md:mt-10">
-              <div className="w-full aspect-[1.85]">
-                <Image alt="" loading="lazy" src="/" width={0} height={0} />
-              </div>
-              <div className="mt-5 text-lg font-bold text-neutral-700">
-                Computational Social Science course
-              </div>
-              <div className="flex gap-5 py-1.5 mt-5">
-                <div className="flex-auto font-medium">February 14, 2023</div>
-                <div>2 min read</div>
-              </div>
-              <div className="mt-4 max-md:mr-1.5">
-                I have taught Computational Social Science{" "}
-              </div>
-              <div className="mt-2.5 max-md:mr-1.5">
-                at the National University of Kyiv-Mohyla{" "}
-              </div>
-              <div className="mt-2.5 max-md:mr-1.5">
-                Academy (est. in 1615) since 2022. Course{" "}
-              </div>
-              <div className="mt-2.5 mr-7 max-md:mr-2.5">
-                descriptionComputational social science{" "}
-              </div>
-              <div className="mt-2.5 max-md:mr-1.5">
-                refers to the academic sub-disciplines{" "}
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
-            <div className="flex flex-col grow py-0.5 text-base leading-6 text-neutral-700 max-md:mt-10">
-              <div className="w-full aspect-[1.85]">
+        <div className=" container mx-auto grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {portfolioItems.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-lg shadow-lg overflow-hidden"
+            >
+              <a href="#" className="block">
                 <Image
-                  loading="lazy"
-                  src="/path/to/your/image.jpg"
-                  alt="Description of the image"
-                  height={0}
-                  width={0}
-                  // Adjust the height according to your image aspect ratio
-                />
-              </div>
-              <div className="mt-5 text-lg font-bold text-neutral-700">
-                Bordeaux - the gorgeous cliche{" "}
-              </div>
-              <div className="text-lg font-bold text-neutral-700">
-                about France
-              </div>
-              <div className="flex gap-5 py-1.5 mt-5">
-                <div className="flex-auto font-medium">September 20, 2020</div>
-                <div>9 min read</div>
-              </div>
-              <div className="mt-4 max-md:mr-1.5">
-                Hi dear readers, I&apos;m happy to finally finish{" "}
-              </div>
-              <div className="mt-2.5 max-md:mr-1.5">
-                the post about my trip to France in 2019.{" "}
-              </div>
-              <div className="mt-2.5 mr-7 max-md:mr-2.5">
-                First of all I thank Kate, Philipe, and Loïc -{" "}
-              </div>
-              <div className="mt-2.5 max-md:mr-1.5">
-                people who created bright explosion of{" "}
-              </div>
-              <div className="mt-2.5 max-md:mr-1.5">
-                happiness in the year where only hard work{" "}
+                  src={item.imageUrl}
+                  alt={item.title}
+                  width={400}
+                  height={300}
+                  className="object-cover"
+                />{" "}
+              </a>
+              <div className="p-4">
+                <a href="#" className="block text-xl font-semibold mb-2">
+                  {item.title}
+                </a>
+                <div className="flex justify-between items-center text-sm text-gray-600 mb-2">
+                  <span>{item.date}</span>
+                  <span>{item.readTime}</span>
+                </div>
+                <p className="text-gray-700">{item.description}</p>
               </div>
             </div>
-          </div>
-          <div className="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
-            <div className="flex flex-col grow text-base leading-6 text-neutral-700 max-md:mt-10">
-              <Image
-                loading="lazy"
-                src="/path/to/your/image.jpg"
-                alt="Description of the image"
-                height={0}
-                width={0}
-                // Adjust the height according to your image aspect ratio
-              />
-              <div className="mt-5 text-lg font-bold text-neutral-700">
-                The beauty of German aesthetic - Die{" "}
-              </div>
-              <div className="text-lg font-bold text-neutral-700">
-                Hauptstadt
-              </div>
-              <div className="flex gap-5 py-1.5 mt-5">
-                <div className="flex-auto font-medium">January 10, 2019</div>
-                <div>5 min read</div>
-              </div>
-              <div className="mt-4">
-                I have visited Berlin during the new year{" "}
-              </div>
-              <div className="mt-2.5 mr-6 max-md:mr-2.5">
-                holidays at 2018-2019.Here I share photos,{" "}
-              </div>
-              <div className="mt-2.5">
-                these pictures show different aspects of the{" "}
-              </div>
-              <div className="mt-2.5">
-                city and give you piece of the Berlin{" "}
-              </div>
-              <div className="flex gap-5 mt-2">
-                <div className="flex-auto">atmosphere. </div>
-                <div className="shrink-0 h-[19px] w-[140px]" />
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
-      </div>
     </div>
   );
 }
