@@ -1,4 +1,20 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    images: {
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'tmpfiles.org',
+          port: '',
+        },
+        {
+            protocol: 'https',
+            hostname: 'fakeimg.pl',
+            port: '',
+          },
+      ],
+    },
+  }
+  ;
 
 export default nextConfig;

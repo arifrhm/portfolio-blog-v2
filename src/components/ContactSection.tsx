@@ -3,7 +3,7 @@ import React from 'react';
 export function ContactSection() {
     return (
         <section className="pt-12 s-hire_me relative">
-            <div className="ctr mx-auto max-w-6xl px-4 py-8">
+            <div className="container mx-auto px-4 py-8">
                 <div className="box-title mb-8 flex items-center space-x-2">
                     <h1 className="text-3xl font-bold">Contact</h1>
                     <div className="shrink-0 w-0.5 bg-zinc-600" style={{ height: '76px' }}></div>
