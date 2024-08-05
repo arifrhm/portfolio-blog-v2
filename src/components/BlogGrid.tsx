@@ -15,10 +15,10 @@ const checkImageUrl = async (url: string): Promise<string> => {
         if (response.ok) {
             return url;
         } else {
-            return "https://fakeimg.pl/400x300";
+            return "https://fakeimg.pl/400x300?text=Blog+Post";
         }
     } catch {
-        return "https://fakeimg.pl/400x300";
+        return "https://fakeimg.pl/400x300?text=Blog+Post";
     }
 };
 
@@ -30,7 +30,7 @@ export const transformData = async (data: any): Promise<Item[]> => {
         const paragraphPost = post.uniquePosts.find((p: any) => p.type === 'paragraph');
         const imagePost = post.uniquePosts.find((p: any) => p.type === 'image');
         // Define a default placeholder image URL
-        const defaultImageUrl = "https://fakeimg.pl/400x300";
+        const defaultImageUrl = "https://fakeimg.pl/400x300?text=Blog+Post";
         
         // Determine the image URL, defaulting to placeholder if no imagePost is found
         const imageUrl = imagePost && imagePost.props?.url
@@ -62,15 +62,13 @@ const BlogGrid = ({ items }: { items: Item[] }) => {
               className="bg-white rounded-lg shadow-lg overflow-hidden"
             >
               {item.imageUrl && (
-                <a href={`/blog/${item.key}`} className="block">
                   <Image
                     src={item.imageUrl}
                     alt={item.title}
-                    width={400}
+                    width={416}
                     height={300}
                     className="object-cover"
                   />
-                </a>
               )}
               <div className="p-4">
                 <a href={`/blog/${item.key}`} className="block text-xl font-semibold mb-2">
