@@ -1,20 +1,13 @@
 import * as React from "react";
-import Image from "next/image";
+import ImageSlider from "./ImageSlider";
 
 export function AboutMeSection() {
   return (
     <div className="flex flex-col">
       <div className="flex flex-col items-center pl-8 w-full max-md:pl-5 max-md:max-w-full">
-        <div className="w-full aspect-[2.5] max-w-[1090px] max-md:max-w-full">
-          <Image
-            loading="lazy"
-            src="/"
-            alt="Description of the image"
-            width={0}
-            height={0}
-          />
-        </div>
-        <div className="z-10 mt-36 w-full max-w-[979px] max-md:mt-10 max-md:max-w-full">
+        <div className="relative mt-36 w-full max-w-[979px] max-md:mt-10 max-md:max-w-full">
+          {/* Ensure this div has `relative` positioning to avoid issues */}
+          <ImageSlider />
           <div className="flex gap-5 max-md:flex-col max-md:gap-0">
             <div className="flex flex-col w-[18%] max-md:ml-0 max-md:w-full">
               <div className="flex flex-col pr-3.5 text-3xl font-bold leading-8 text-neutral-700 max-md:mt-10">
@@ -66,15 +59,6 @@ export function AboutMeSection() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="w-full aspect-[1.92] max-md:max-w-full">
-        <Image
-          loading="lazy"
-          src="/gita_profile_pic.jpg"
-          alt="Description of the image"
-          width={256}
-          height={256}
-        />
       </div>
     </div>
   );

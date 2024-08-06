@@ -12,6 +12,11 @@ const nextConfig = {
             hostname: 'fakeimg.pl',
             port: '',
           },
+          {
+            protocol: 'https',
+            hostname: 'via.placeholder.com',
+            port: '',
+          },
       ],
     },
   }

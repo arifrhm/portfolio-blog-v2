@@ -8,59 +8,66 @@ import "./BlockNoteBlogView.css";
 import { CodeBlock } from "@/lib/CodeBlock";
 
 // Define the type for the fetched data
-interface Content {
-  type: string;
-  text?: string;
-  styles?: Record<any, any>;
-  url?: string;
-  name?: string;
-  showPreview?: boolean;
-  previewWidth?: number;
-}
+type Content = {
+  type: "text";
+  text: string;
+  styles: {}; // Ensure styles property is present
+};
 
-type ContentType = "audio" | "table" | "video" | "image" | "paragraph" | "heading" | "bulletListItem" | "numberedListItem" | "checkListItem" | "file";
+type PostData = {
+  uniquePosts: {
+    unique_post_id: string;
+    type: "paragraph" | "heading" | "bulletListItem" | "numberedListItem" | "checkListItem" | "table" | "file" | "image" | "video" | "audio";
+    content: Content[];
+    props: any;
+  }[];
+};
 
-interface UniquePost {
-  id: number;
-  unique_post_id: string;
-  type: ContentType;
-  props: Record<any, any>;
-  content: Content[];
-  children: any[];
-}
-
-interface PostData {
-  id: number;
-  uniquePosts: UniquePost[];
-}
-
-// Fetch data from the API
 const fetchData = async (id: string): Promise<PostData> => {
   const response = await fetch(`http://127.0.0.1:8000/api/data/${id}`);
   if (!response.ok) {
     throw new Error('Network response was not ok');
   }
   return response.json();
-}
+};
 
-// Convert API data to BlockNote blocks
 const convertToBlocks = (data: PostData): Block[] => {
-  const blocks: Block[] = [];
-  data.uniquePosts.forEach(post => {
-    const block: Block = {
-      id: post.unique_post_id,
-      type: post.type,
-      content: post.content || [],
-      props: post.props,
-    };
-    blocks.push(block);
-  });
-  return blocks.length > 0 ? blocks : [{ type: "paragraph", content: [{ type: "text", text: "No content available." }] }];
+  // eslint-disable-next-line
+  return data.uniquePosts.map(post => ({
+    id: post.unique_post_id,
+    type: post.type,
+    content: post.content || [],
+    props: post.props,
+    children: []
+  }));
 };
 
 const BlockNoteSinglePostView = ({ id }: { id: string }) => {
+  const [blocks, setBlocks] = useState<Block[]>([]);
   const editorRef = useRef<BlockNoteEditor | null>(null);
-  const [blocks, setBlocks] = useState<Block[]>([{ type: "paragraph", content: [{ type: "text", text: "Loading...", styles: {} }] }]);
+
+  const editor = useCreateBlockNote({
+    initialContent: [
+      {
+        id: "initial-loading-1",
+        type: "paragraph",
+        content: [{ type: "text", text: "Loading...", styles: {} }],
+        props: {},
+        children: []
+      }
+    ],
+    schema: BlockNoteSchema.create({
+      blockSpecs: {
+        ...defaultBlockSpecs,
+        procode: CodeBlock,
+      },
+    }),
+  });
+
+  useEffect(() => {
+    // eslint-disable-next-line
+    editorRef.current = editor;
+  }, [editor]);
 
   useEffect(() => {
     const getData = async () => {
@@ -69,7 +76,7 @@ const BlockNoteSinglePostView = ({ id }: { id: string }) => {
         const initialBlocks = convertToBlocks(postData);
         setBlocks(initialBlocks);
         if (editorRef.current) {
-          editorRef.current.replaceBlocks(editor.document, initialBlocks);
+          editorRef.current.replaceBlocks(editorRef.current.document, initialBlocks);
         }
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -78,22 +85,6 @@ const BlockNoteSinglePostView = ({ id }: { id: string }) => {
 
     getData();
   }, [id]);
-
-  const schema = BlockNoteSchema.create({
-    blockSpecs: {
-      ...defaultBlockSpecs,
-      procode: CodeBlock,
-    },
-  });
-
-  const editor = useCreateBlockNote({
-    schema: schema,
-    initialContent: blocks,
-  });
-
-  useEffect(() => {
-    editorRef.current = editor;
-  }, [editor]);
 
   return (
     <div className={"wrapper pt-20"}>

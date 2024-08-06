@@ -50,7 +50,6 @@ export const transformData = async (data: any): Promise<Item[]> => {
 };
 
 const BlogGrid = ({ items }: { items: Item[] }) => {
-    console.log("items", items);
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {items.length === 0 ? (

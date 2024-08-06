@@ -9,21 +9,19 @@ import { CodeBlock } from "@/lib/CodeBlock";
 
 // Define the type for the fetched data
 interface Content {
-  type: string;
+  type: "text" | "link";
   text?: string;
-  styles?: Record<any, any>;
+  styles?: Record<string, any>;
   url?: string;
-  name?: string;
-  showPreview?: boolean;
-  previewWidth?: number;
 }
+
 type ContentType = "audio" | "table" | "video" | "image" | "paragraph" | "heading" | "bulletListItem" | "numberedListItem" | "checkListItem" | "file";
 
 interface UniquePost {
   id: number;
   unique_post_id: string;
   type: ContentType;
-  props: Record<any, any>;
+  props: Record<string, any>;
   content: Content[];
   children: any[];
 }
@@ -52,22 +50,41 @@ const convertToBlocks = (data: PostData[]): Block[] => {
       const block: Block = {
         id: post.unique_post_id,
         type: post.type,
-        content: post.content || [],
+        content: post.content.map(c => {
+          if (c.type === "text") {
+            return {
+              type: "text",
+              text: c.text || "",
+              styles: c.styles || {},
+            };
+          } else if (c.type === "link") {
+            return {
+              type: "link",
+              url: c.url || "",
+              text: c.text || "",
+            };
+          } else {
+            throw new Error(`Unsupported content type: ${c.type}`);
+          }
+        }),
+        // eslint-disable-next-line
         props: post.props,
       };
       console.log("block", block);
       blocks.push(block);
     });
   });
-  return blocks.length > 0 ? blocks : [{ type: "paragraph", content: [{ type: "text", text: "No content available." }] }];
+  // eslint-disable-next-line
+  return blocks.length > 0 ? blocks : [{ type: "paragraph", content: [{ type: "text", text: "No content available.", styles: {} }] }];
 };
 
 export default function BlockNoteBlogView() {
   const editorRef = useRef<BlockNoteEditor | null>(null);
+  // eslint-disable-next-line
   const [blocks, setBlocks] = useState<Block[]>([{
     type: "paragraph",
-    content: [{type:'text', text: "Loading...", styles:{}}],
-  },]);
+    content: [{ type: "text", text: "Loading...", styles: {} }],
+  }]);
 
   // Fetch and set the initial content
   useEffect(() => {
@@ -102,6 +119,7 @@ export default function BlockNoteBlogView() {
 
   // Assign editor instance to ref
   useEffect(() => {
+    // eslint-disable-next-line
     editorRef.current = editor;
   }, [editor]);
 
