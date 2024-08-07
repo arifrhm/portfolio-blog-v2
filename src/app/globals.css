@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 
+@layer base {
+  body {
+    @apply bg-white text-gray-800 dark:bg-gray-800 dark:text-gray-50;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -10,7 +16,23 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+@media (max-width: 1024px) {
+  /* Ensure the button is visible in desktop view */
+  .theme-toggle-button {
+    display: block;
+  }
+}
 
+/* Add styles to ensure button visibility */
+.theme-toggle-button {
+  display: block;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

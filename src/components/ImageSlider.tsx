@@ -1,12 +1,13 @@
-// ImageSlider.js
 import React, { useState } from 'react';
 import Image from 'next/image';
 import './ImageSlider.css'; // Import CSS file for styling
 
 const images = [
-  { src: 'https://fakeimg.pl/600x400?text=Slide+1', alt: 'Slide 1' },
-  { src: 'https://fakeimg.pl/600x400?text=Slide+2', alt: 'Slide 2' },
-  { src: 'https://fakeimg.pl/600x400?text=Slide+3', alt: 'Slide 3' },
+  { src: '/main/1.jpeg', alt: 'Portfolio 1' },
+  { src: '/main/2.jpeg', alt: 'Portfolio 2' },
+  { src: '/main/3.jpeg', alt: 'Portfolio 3' },
+  { src: '/main/4.jpeg', alt: 'Portfolio 4' },
+  { src: '/main/5.jpeg', alt: 'Portfolio 5' },
 ];
 
 const ImageSlider = () => {

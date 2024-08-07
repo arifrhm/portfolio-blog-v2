@@ -36,18 +36,16 @@ export function BlogSection() {
     fetchData();
   }, []);
 
-
   return (
-    <div className="pt-20 flex flex-col px-5 py-12">
+    <div className="pt-20 flex flex-col px-5 py-12 bg-white dark:bg-gray-900">
       <div className="container mx-auto box-title mb-8 flex items-center space-x-2">
-        <h1 className="text-3xl font-bold">Blog</h1>
-        <div className="shrink-0 w-0.5 bg-zinc-600" style={{ height: '76px' }}></div>
-        <h2 className="flex-auto self-stretch my-auto text-lg">Posts about data science, AI, ML and other.</h2>
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Blog</h1>
+        <div className="shrink-0 w-0.5 bg-zinc-600 dark:bg-zinc-400" style={{ height: '76px' }}></div>
+        <h2 className="flex-auto self-stretch my-auto text-lg text-gray-800 dark:text-gray-300">Posts about data science, AI, ML and other.</h2>
       </div>
-      <div className="container mx-auto box-title mb-8 flex items-center space-x-2">
-
-      {(loading) && <p>Loading...</p>}
-      {(error) && <p>Error: {error}</p>}
+      <div className="container mx-auto">
+        {loading && <p className="text-gray-800 dark:text-gray-300">Loading...</p>}
+        {error && <p className="text-red-500 dark:text-red-400">Error: {error}</p>}
         <BlogGrid items={items} />
       </div>
     </div>

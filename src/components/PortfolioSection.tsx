@@ -3,74 +3,73 @@ import Image from "next/image";
 
 const portfolioItems = [
   {
-    title: "Data Engineering in Ad Tech enterprise",
+    title: "Instruct AI to create a chart",
     description:
-      "I’ve been working for a big Ad Tech enterprise (manages ~$2B in media spend and deploys campaigns in 70 markets, clients portfolio including: Google, Viber, etc). The company had a huge amount of...",
-    date: "2017-2022",
-    readTime: "11 min read",
-    imageUrl: "/media/img/post/preview/m_2p5x_1.png",
+      "Developed an AI tool that automatically generates charts based on user input data. This tool simplifies the process of creating visual data representations.",
+    date: "2024",
+    imageUrl: "/Instruct AI to create a chart.jpeg",
   },
   {
-    title: "AI for hiring — recommendation system for recruiters",
+    title: "Build machine learning model to find Question-Answers similarity with Bert and Transformer",
     description:
-      "This is a recommendation system for recruiters that estimates how new candidates suit available vacancies. It was developed for a real IT company based on their data after consulting experts. The...",
-    date: "2017",
-    readTime: "5 min read",
-    imageUrl: "/media/img/post/preview/m_2p5x_2.png",
+      "Implemented a machine learning model using BERT and Transformer architecture to find similarity between questions and answers, enhancing the accuracy of query responses.",
+    date: "2024",
+    imageUrl: "/Build machine learning model to find Question-Answers similarity with Bert and Transformer.jpeg",
   },
   {
-    title: "Panacea. CRM for city Ambulance",
+    title: "FB Prophet model for Future Earning Prediction",
     description:
-      "This project, Panacea, is a system aimed at storing data about city ambulance calls, building flexible dashboards, statistics and people search. BackgroundOnce, in 2015 Lviv Governor visited Lviv main ambulance...",
-    date: "2015-2018",
-    readTime: "4 min read",
-    imageUrl: "/media/img/post/preview/m_2p5x_3.png",
+      "Used Facebook's Prophet model to predict future earnings. This model helps businesses to forecast revenue with higher accuracy and plan accordingly.",
+    date: "2024",
+    imageUrl: "/FB Prophet model for Future Earning Prediction.jpeg",
   },
-  // Add more items as needed
+  {
+    title: "CRM: Customer Segmentation Google Looker Studio",
+    description:
+      "Developed customer segmentation analysis using Google Looker Studio, providing valuable insights into customer behavior and preferences.",
+    date: "2024",
+    imageUrl: "/CRM - Customer Segmentation Google Looker Studio.jpeg",
+  },
+  {
+    title: "CRM: Customer Segmentation Exploration Analysis",
+    description:
+      "Conducted an in-depth exploration analysis of customer segmentation, allowing for more personalized marketing strategies and improved customer retention.",
+    date: "2024",
+    imageUrl: "/CRM - Customer Segmentation Exploration Analysis.jpeg",
+  },
+  {
+    title: "Excel Dashboard Daily Report",
+    description:
+      "Created an automated Excel dashboard for daily reporting, streamlining the process of data visualization and decision-making for businesses.",
+    date: "2024",
+    imageUrl: "/Excel Dashboard Daily Report.jpeg",
+  },
 ];
 
 const PortfolioSection: React.FC = () => {
   return (
-    <section className="pt-20 py-12">
+    <section className="pt-20 py-12 dark:bg-gray-900">
       <div className="container mx-auto px-4">
-        <div className="container mx-auto box-title mb-8 flex items-center space-x-2">
-          <h1 className="text-3xl font-bold">Portfolio</h1>
-          <div className="shrink-0 w-0.5 bg-zinc-600" style={{ height: '76px' }}></div>
-          <h2 className="flex-auto self-stretch my-auto text-lg">
-            My works in software & data engineering, data science and
-            researches.
+        <div className="box-title mb-8 flex items-center space-x-2">
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Portfolio</h1>
+          <div className="shrink-0 w-0.5 bg-zinc-600 dark:bg-gray-400" style={{ height: '76px' }}></div>
+          <h2 className="flex-auto self-stretch my-auto text-lg text-gray-800 dark:text-gray-300">
+            My works in software & data engineering, data science and researches.
           </h2>
         </div>
         <div className="text-center mb-8">
-          <span className="text-xl font-semibold">Tag filter:</span>
+          <span className="text-xl font-semibold text-gray-900 dark:text-gray-100">Tag filter:</span>
           <div className="mt-2 space-x-2">
-            <button className="tag">#all</button>
-            <button className="tag">#ML</button>
-            <button className="tag">#API</button>
-            <button className="tag">#C</button>
-            <button className="tag">#phantomJS</button>
-            <button className="tag">#dashboard</button>
-            <button className="tag">#NASM</button>
-            <button className="tag">#web project</button>
-            <button className="tag">#data</button>
-            <button className="tag">#recommendation system</button>
-            <button className="tag">#arduino</button>
-            <button className="tag">#bot</button>
-            <button className="tag">#statistics</button>
-            <button className="tag">#CRM</button>
-            <button className="tag">#own product</button>
-            <button className="tag">#assembler</button>
-            <button className="tag">#data engineering</button>
-            <button className="tag">#web scraping</button>
-            <button className="tag">#hardware</button>
-            <button className="tag">#hard problem</button>
+            {["#all", "#ML", "#API", "#C", "#phantomJS", "#dashboard", "#NASM", "#web project", "#data", "#recommendation system", "#arduino", "#bot", "#statistics", "#CRM", "#own product", "#assembler", "#data engineering", "#web scraping", "#hardware", "#hard problem"].map(tag => (
+              <button key={tag} className="tag text-gray-700 dark:text-gray-300">{tag}</button>
+            ))}
           </div>
         </div>
         <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {portfolioItems.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-lg overflow-hidden"
+              className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
             >
               <a href="#" className="block">
                 <Image
@@ -79,17 +78,16 @@ const PortfolioSection: React.FC = () => {
                   width={400}
                   height={300}
                   className="object-cover"
-                />{" "}
+                /> 
               </a>
               <div className="p-4">
-                <a href="#" className="block text-xl font-semibold mb-2">
+                <a href="#" className="block text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">
                   {item.title}
                 </a>
-                <div className="flex justify-between items-center text-sm text-gray-600 mb-2">
+                <div className="flex justify-between items-center text-sm text-gray-600 dark:text-gray-400 mb-2">
                   <span>{item.date}</span>
-                  <span>{item.readTime}</span>
                 </div>
-                <p className="text-gray-700">{item.description}</p>
+                <p className="text-gray-700 dark:text-gray-300">{item.description}</p>
               </div>
             </div>
           ))}

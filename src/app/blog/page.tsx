@@ -5,13 +5,13 @@ import Header from '@/components/Header';
 
 const BlogPage = () => {
   return (
-    <div className="App">
-      <Header />
-      <div className="content">
-        <BlogSection />
+      <div className="App">
+        <Header />
+        <div className="content">
+          <BlogSection />
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
   );
 };
 
