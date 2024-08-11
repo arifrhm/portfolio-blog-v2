@@ -7,6 +7,7 @@ import "@blocknote/mantine/style.css";
 import "./BlockNoteBlogView.css";
 import { CodeBlock } from "@/lib/CodeBlock";
 
+/* eslint-disable */
 // Define the type for the fetched data
 interface Content {
   type: "text" | "link";
@@ -50,6 +51,7 @@ const convertToBlocks = (data: PostData[]): Block[] => {
       const block: Block = {
         id: post.unique_post_id,
         type: post.type,
+        // eslint-disable-next-line
         content: post.content.map(c => {
           if (c.type === "text") {
             return {
