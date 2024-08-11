@@ -86,25 +86,6 @@ export default function BlockNoteBlogView() {
     content: [{ type: "text", text: "Loading...", styles: {} }],
   }]);
 
-  // Fetch and set the initial content
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const fetchedData = await fetchData();
-        const initialBlocks = convertToBlocks(fetchedData);
-        setBlocks(initialBlocks);
-        console.log("block set initial blocks", initialBlocks);
-        if (editorRef.current) {
-          editorRef.current.replaceBlocks(editor.document, initialBlocks);
-        }
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    getData();
-  }, []);
-  
   const schema = BlockNoteSchema.create({
     blockSpecs: {
       ...defaultBlockSpecs,
@@ -117,11 +98,24 @@ export default function BlockNoteBlogView() {
     initialContent: blocks,
   });
 
-  // Assign editor instance to ref
+  // Fetch and set the initial content
   useEffect(() => {
-    // eslint-disable-next-line
-    editorRef.current = editor;
-  }, [editor]);
+    const getData = async () => {
+      try {
+        const fetchedData = await fetchData();
+        const initialBlocks = convertToBlocks(fetchedData);
+        setBlocks(initialBlocks);
+        if (editorRef.current) {
+          editorRef.current.replaceBlocks(editor.document, initialBlocks);
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    getData();
+  }, [editor.document]); // Add editor.document here
+
 
   return (
     <div className={"wrapper pt-20"}>
