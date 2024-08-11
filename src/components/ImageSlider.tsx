@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import './ImageSlider.css'; // Import CSS file for styling
+import './ImageSlider.css';
 
 const images = [
-  { src: '/main/1.jpeg', alt: 'Portfolio 1' },
-  { src: '/main/2.jpeg', alt: 'Portfolio 2' },
-  { src: '/main/3.jpeg', alt: 'Portfolio 3' },
-  { src: '/main/4.jpeg', alt: 'Portfolio 4' },
-  { src: '/main/5.jpeg', alt: 'Portfolio 5' },
+  { src: '/main/1.jpg', alt: 'Portfolio 1' },
+  { src: '/main/2.jpg', alt: 'Portfolio 2' },
+  { src: '/main/3.jpg', alt: 'Portfolio 3' },
+  { src: '/main/4.jpg', alt: 'Portfolio 4' },
+  { src: '/main/5.jpg', alt: 'Portfolio 5' },
 ];
 
 const ImageSlider = () => {
@@ -24,14 +24,14 @@ const ImageSlider = () => {
   };
 
   return (
-    <div className="slider mb-20">
+    <div className="slider">
       <button className="prev" onClick={prevSlide}>‹</button>
       <div className="image-container">
         <Image 
           src={images[currentIndex].src} 
           alt={images[currentIndex].alt} 
-          layout="fill"
-          objectFit="cover"
+          layout="fill"  /* This allows the image to fill the container */
+          objectFit="contain"  /* Choose between "cover", "contain", etc. */
         />
       </div>
       <button className="next" onClick={nextSlide}>›</button>

@@ -48,20 +48,20 @@ const portfolioItems = [
 
 const PortfolioSection: React.FC = () => {
   return (
-    <section className="pt-20 py-12 dark:bg-gray-900">
+    <section className="pt-20 py-12 bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="box-title mb-8 flex items-center space-x-2">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Portfolio</h1>
-          <div className="shrink-0 w-0.5 bg-zinc-600 dark:bg-gray-400" style={{ height: '76px' }}></div>
-          <h2 className="flex-auto self-stretch my-auto text-lg text-gray-800 dark:text-gray-300">
+          <h1 className="text-3xl font-bold text-gray-100">Portfolio</h1>
+          <div className="shrink-0 w-0.5 bg-gray-400" style={{ height: '76px' }}></div>
+          <h2 className="flex-auto self-stretch my-auto text-lg text-gray-300">
             My works in software & data engineering, data science and researches.
           </h2>
         </div>
         <div className="text-center mb-8">
-          <span className="text-xl font-semibold text-gray-900 dark:text-gray-100">Tag filter:</span>
+          <span className="text-xl font-semibold text-gray-100">Tag filter:</span>
           <div className="mt-2 space-x-2">
             {["#all", "#ML", "#API", "#C", "#phantomJS", "#dashboard", "#NASM", "#web project", "#data", "#recommendation system", "#arduino", "#bot", "#statistics", "#CRM", "#own product", "#assembler", "#data engineering", "#web scraping", "#hardware", "#hard problem"].map(tag => (
-              <button key={tag} className="tag text-gray-700 dark:text-gray-300">{tag}</button>
+              <button key={tag} className="tag text-gray-300">{tag}</button>
             ))}
           </div>
         </div>
@@ -69,7 +69,7 @@ const PortfolioSection: React.FC = () => {
           {portfolioItems.map((item, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
+              className="bg-gray-800 rounded-lg shadow-lg overflow-hidden"
             >
               <a href="#" className="block">
                 <Image
@@ -81,13 +81,13 @@ const PortfolioSection: React.FC = () => {
                 /> 
               </a>
               <div className="p-4">
-                <a href="#" className="block text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">
+                <a href="#" className="block text-xl font-semibold mb-2 text-gray-100">
                   {item.title}
                 </a>
-                <div className="flex justify-between items-center text-sm text-gray-600 dark:text-gray-400 mb-2">
+                <div className="flex justify-between items-center text-sm text-gray-400 mb-2">
                   <span>{item.date}</span>
                 </div>
-                <p className="text-gray-700 dark:text-gray-300">{item.description}</p>
+                <p className="text-gray-300">{item.description}</p>
               </div>
             </div>
           ))}

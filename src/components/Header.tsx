@@ -1,14 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { usePathname } from 'next/navigation';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import SearchBar from "./SearchBar";
-import ThemeToggleButton from './ThemeToggleButton'; // Ensure the path is correct
-import './HeaderStyles.css'; // Ensure the path is correct
 
 const Header: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
   const currentPath = usePathname();
 
   const toggleMenu = () => {
@@ -16,16 +14,15 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="header fixed top-0 left-0 w-full bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 py-4 z-50">
+    <header className="fixed top-0 left-0 w-full bg-gray-900 border-b border-gray-700 py-4 z-50">
       <div className="container mx-auto flex justify-between items-center px-4">
-        <div className="text-lg font-bold">
+        <div className="text-lg font-bold text-white">
           <a href="/" className="hover:underline">
             <span className="font-extrabold">Gita</span> Suputra
           </a>
         </div>
         <div className="lg:hidden flex items-center">
-          <ThemeToggleButton /> {/* Ensure the button is visible */}
-          <button onClick={toggleMenu} className="text-gray-600 dark:text-gray-50 focus:outline-none ml-4">
+          <button onClick={toggleMenu} className="text-gray-50 focus:outline-none ml-4">
             {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
         </div>
@@ -34,7 +31,7 @@ const Header: React.FC = () => {
             <a 
               key={path} 
               href={path} 
-              className={`relative text-gray-600 dark:text-gray-50 ${
+              className={`relative text-gray-50 ${
                 currentPath === path ? 'line-through' : 'hover:line-through'
               }`}
             >
@@ -42,27 +39,25 @@ const Header: React.FC = () => {
             </a>
           ))}
         </nav>
-        <div className={`hidden lg:flex items-center space-x-4 text-gray-600 dark:text-gray-50`}>
+        <div className={`hidden lg:flex items-center space-x-4 text-gray-50`}>
           <SearchBar />
-          <ThemeToggleButton /> {/* Ensure the button is visible */}
         </div>
       </div>
       {isOpen && (
-        <div className="lg:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+        <div className="lg:hidden bg-gray-900 border-t border-gray-700">
           <nav className="flex flex-col items-center space-y-4 py-4">
             {['/blog', '/portfolio', '/about', '/contact'].map((path) => (
               <a 
                 key={path} 
                 href={path} 
-                className={`text-gray-600 dark:text-gray-50 ${currentPath === path ? 'line-through' : 'hover:line-through'}`}
+                className={`text-gray-50 ${currentPath === path ? 'line-through' : 'hover:line-through'}`}
               >
                 {path.replace('/', '')}
               </a>
             ))}
-            <div className="text-gray-600 dark:text-gray-50">
+            <div className="text-gray-50">
               <SearchBar />
             </div>
-            <ThemeToggleButton /> {/* Ensure the button is visible */}
           </nav>
         </div>
       )}

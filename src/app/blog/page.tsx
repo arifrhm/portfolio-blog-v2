@@ -7,7 +7,7 @@ const BlogPage = () => {
   return (
       <div className="App">
         <Header />
-        <div className="content">
+        <div className="content bg-gray-900">
           <BlogSection />
         </div>
         <Footer />

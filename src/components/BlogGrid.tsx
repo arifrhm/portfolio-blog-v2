@@ -54,12 +54,12 @@ const BlogGrid = ({ items }: { items: Item[] }) => {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {items.length === 0 ? (
-          <p className="text-gray-800 dark:text-gray-300">No items found</p> // Display this message if no items
+          <p className="text-gray-300">No items found</p> // Display this message if no items
         ) : (
           items.map((item) => (
             <div
               key={item.key}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
+              className="bg-gray-800 rounded-lg shadow-lg overflow-hidden"
             >
               {item.imageUrl && (
                   <Image
@@ -71,14 +71,14 @@ const BlogGrid = ({ items }: { items: Item[] }) => {
                   />
               )}
               <div className="p-4">
-                <a href={`/blog/${item.key}`} className="block text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">
+                <a href={`/blog/${item.key}`} className="block text-xl font-semibold mb-2 text-gray-100">
                   {item.title}
                 </a>
-                <div className="flex justify-between items-center text-sm text-gray-600 dark:text-gray-400 mb-2">
+                <div className="flex justify-between items-center text-sm text-gray-400 mb-2">
                   <span>{item.date}</span>
                   <span>{item.readTime}</span>
                 </div>
-                <p className="text-gray-700 dark:text-gray-300">{item.description}</p>
+                <p className="text-gray-300">{item.description}</p>
               </div>
             </div>
           ))

@@ -1,15 +1,16 @@
 .slider {
-  position: relative; /* or absolute if needed */
-  width: 100%;
-  height: 700px; /* Adjust as needed */
-  overflow: hidden;
-  z-index: 0; /* Ensure it is behind the Header */
+  position: relative;
+  max-width: 100%;
+  height: 100vh; /* Set the slider to fill the viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .image-container {
-  position: relative;
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 .prev, .next {
@@ -21,8 +22,7 @@
   border: none;
   padding: 10px;
   cursor: pointer;
-  font-size: 24px;
-  z-index: 1; /* Ensure buttons are on top of the image */
+  z-index: 1;
 }
 
 .prev {

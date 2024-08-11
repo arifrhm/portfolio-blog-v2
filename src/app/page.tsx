@@ -5,9 +5,11 @@ import { Footer } from '@/components/Footer';
 import Header from '@/components/Header';
 import React from 'react';
 import '@/app/globals.css';
+import Image from 'next/image';
+
 
 const HomePage = () => (
-    <div className="App">
+    <div className="App bg-gray-900">
       <Header />
       <AboutMeSection />
       <Footer />

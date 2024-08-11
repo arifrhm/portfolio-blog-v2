@@ -5,7 +5,7 @@
 
 @layer base {
   body {
-    @apply bg-white text-gray-800 dark:bg-gray-800 dark:text-gray-50;
+    @apply bg-gray-800 text-gray-50;
   }
 }
 
@@ -23,16 +23,6 @@
   }
 }
 
-/* Add styles to ensure button visibility */
-.theme-toggle-button {
-  display: block;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
