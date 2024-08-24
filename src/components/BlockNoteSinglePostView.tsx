@@ -61,7 +61,7 @@ const darkTheme: Theme = {
 };
 
 const fetchData = async (id: string): Promise<PostData> => {
-  const response = await fetch(`http://127.0.0.1:8000/api/data/${id}`);
+  const response = await fetch(`http://85.31.232.226:8000/api/data/${id}`);
   if (!response.ok) {
     throw new Error('Network response was not ok');
   }

@@ -58,9 +58,9 @@ const PortfolioSection: React.FC = () => {
           </h2>
         </div>
         <div className="text-center mb-8">
-          <span className="text-xl font-semibold text-gray-100">Tag filter:</span>
+          <span className="text-xl font-semibold text-gray-100">Tags:</span>
           <div className="mt-2 space-x-2">
-            {["#all", "#ML", "#API", "#C", "#phantomJS", "#dashboard", "#NASM", "#web project", "#data", "#recommendation system", "#arduino", "#bot", "#statistics", "#CRM", "#own product", "#assembler", "#data engineering", "#web scraping", "#hardware", "#hard problem"].map(tag => (
+            {["#all", "#ML", "#dashboard", "#data", "#recommendation system", "#data engineering", "#data science" ].map(tag => (
               <button key={tag} className="tag text-gray-300">{tag}</button>
             ))}
           </div>

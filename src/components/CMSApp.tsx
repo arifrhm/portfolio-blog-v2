@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState } from 'react';
 import "@blocknote/core/fonts/inter.css";
 import {
   SuggestionMenuController,
@@ -13,6 +13,7 @@ import "@blocknote/mantine/style.css";
 import { BlockNoteSchema, defaultBlockSpecs, filterSuggestionItems } from "@blocknote/core";
 import { CodeBlock, insertCode } from "@/lib/CodeBlock";
 import { BlockNoteView } from "@blocknote/mantine";
+import TagModal from '@/components/TagModal'; // Adjust the import path as needed
 
 interface CustomItem {
   title: string;
@@ -43,7 +44,6 @@ const schema = BlockNoteSchema.create({
   },
 });
 
-// Uploads a file to tmpfiles.org and returns the URL to the uploaded file.
 async function uploadFile(file: File): Promise<string> {
   const body = new FormData();
   body.append("file", file);
@@ -59,9 +59,10 @@ async function uploadFile(file: File): Promise<string> {
 }
 
 const CMSApp: React.FC = () => {
-  const [markdownContent, setMarkdownContent] = useState<string>(''); // State to hold Markdown content
   const [loading, setLoading] = useState<boolean>(false); // State for loading indicator
   const [successMessage, setSuccessMessage] = useState<string | null>(null); // State for success message
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false); // State for modal visibility
+  const [postId, setPostId] = useState<number | null>(null); // State for storing postId
 
   const editor = useCreateBlockNote({
     schema: schema,
@@ -84,11 +85,10 @@ const CMSApp: React.FC = () => {
     uploadFile,
   });
 
-  // Handle submit logic
   const handleSubmit = async () => {
     setLoading(true); // Show loading bar
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/data/', {
+      const response = await fetch('http://85.31.232.226:8000/api/data/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -97,7 +97,10 @@ const CMSApp: React.FC = () => {
       });
 
       if (response.ok) {
+        const result = await response.json();
+        setPostId(result.id); // Capture the postId from the response
         setSuccessMessage('Submission successful');
+        setIsModalOpen(true); // Open the tag modal after post submission
         setTimeout(() => setSuccessMessage(null), 3000); // Hide success message after 3 seconds
       } else {
         console.error('Submission failed');
@@ -176,6 +179,7 @@ const CMSApp: React.FC = () => {
       >
         Submit
       </button>
+      <TagModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} postId={postId ?? 0} />
     </div>
   );
 };
