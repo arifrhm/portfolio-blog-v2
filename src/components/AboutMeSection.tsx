@@ -8,7 +8,7 @@ export function AboutMeSection() {
       <div className="flex flex-col items-center pl-8 w-full max-md:pl-5 max-md:max-w-full">
         <div className="relative mt-40 w-full max-w-[979px] max-md:mt-20 max-md:max-w-full">
           {/* Increased the margin top from mt-36 to mt-48 */}
-          <Image className="bg-gray-900 mx-auto mb-20" alt='splash Image' src='https://fakeimg.pl/400x300?text=Data+Enthusiast' height={600} width={979} />
+          <Image className="bg-gray-900 mx-auto mb-20" alt='splash Image' src='/home.jpeg' height={600} width={979} />
 
           <div className="flex gap-5 max-md:flex-col max-md:gap-0">
             <div className="flex flex-col w-[18%] max-md:ml-0 max-md:w-full">
