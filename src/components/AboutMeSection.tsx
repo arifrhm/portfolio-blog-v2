@@ -18,7 +18,7 @@ export function AboutMeSection() {
               </div>
             </div>
             <div className="flex flex-col ml-5 w-[82%] max-md:ml-0 max-md:w-full">
-              <div className="flex flex-col grow pr-6 pb-10 mt-10 text-base leading-6text-neutral-400 max-md:max-w-full">
+              <div className="flex flex-col grow pr-6 pb-10 mt-10 text-base leading-6 text-neutral-300 max-md:max-w-full">
                 <div className="max-md:max-w-full">
                   I am a data scientist and a researcher. My passion is working
                   with hidden pattern recognition,{" "}
