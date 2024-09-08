@@ -14,6 +14,7 @@ import { BlockNoteSchema, defaultBlockSpecs, filterSuggestionItems } from "@bloc
 import { CodeBlock, insertCode } from "@/lib/CodeBlock";
 import { BlockNoteView } from "@blocknote/mantine";
 import TagModal from '@/components/TagModal'; // Adjust the import path as needed
+import { API_URL } from '@/constants/apiConstants';
 
 interface CustomItem {
   title: string;
@@ -88,7 +89,7 @@ const CMSApp: React.FC = () => {
   const handleSubmit = async () => {
     setLoading(true); // Show loading bar
     try {
-      const response = await fetch('http://85.31.232.226:8000/api/data/', {
+      const response = await fetch(`${API_URL}/data/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

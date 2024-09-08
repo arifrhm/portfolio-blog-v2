@@ -6,6 +6,7 @@ import { BlockNoteView } from "@blocknote/mantine";
 import "@blocknote/mantine/style.css";
 import "./BlockNoteBlogView.css";
 import { CodeBlock } from "@/lib/CodeBlock";
+import { API_URL } from "@/constants/apiConstants";
 
 /* eslint-disable */
 // Define the type for the fetched data
@@ -34,7 +35,7 @@ interface PostData {
 
 // Fetch data from the API
 async function fetchData(): Promise<PostData[]> {
-  const response = await fetch('http://85.31.232.226:8000/api/data/');
+  const response = await fetch(`${API_URL}/data/`);
   if (!response.ok) {
     throw new Error('Network response was not ok');
   }

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React, { useEffect, useState } from 'react';
 import BlogGrid, { transformData } from '@/components/BlogGrid';
+import { API_URL } from "@/constants/apiConstants";
 
 interface Item {
   key: string;
@@ -19,7 +20,7 @@ export function BlogSection() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://85.31.232.226:8000/api/data');
+        const response = await fetch(`${API_URL}/data`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }

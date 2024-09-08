@@ -6,6 +6,7 @@ import { BlockNoteView, darkDefaultTheme, Theme } from "@blocknote/mantine";
 import "@blocknote/mantine/style.css";
 import "./BlockNoteBlogView.css";
 import { CodeBlock } from "@/lib/CodeBlock";
+import {API_URL} from "@/constants/apiConstants";
 
 // Define the type for the fetched data
 type Content = {
@@ -61,7 +62,7 @@ const darkTheme: Theme = {
 };
 
 const fetchData = async (id: string): Promise<PostData> => {
-  const response = await fetch(`http://85.31.232.226:8000/api/data/${id}`);
+  const response = await fetch(`${API_URL}/data/${id}`);
   if (!response.ok) {
     throw new Error('Network response was not ok');
   }

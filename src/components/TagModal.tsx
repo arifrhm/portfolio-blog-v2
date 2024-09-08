@@ -1,4 +1,5 @@
 // components/TagModal.tsx
+import { API_URL } from '@/constants/apiConstants';
 import { useState, FormEvent } from 'react';
 
 interface TagModalProps {
@@ -14,7 +15,7 @@ const TagModal: React.FC<TagModalProps> = ({ isOpen, onClose, postId }) => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const res = await fetch('http://85.31.232.226:8000/api/tags/', {
+      const res = await fetch(`${API_URL}/tags/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
